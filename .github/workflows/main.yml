@@ -26,8 +26,8 @@ jobs:
         uses: innocarpe/actions-slack@v1
         with:
           status: ${{ job.status }} # Required
-          success_text: '<!subteam^S1ABC2DEF> Wow! Tenemos un nuevo cambio para el sitio de phpmexico 🚀'
-          failure_text: '<!subteam^S1ABC2DEF> Ouch! Algo falló subiendo nuevos cambios 😢'
+          success_text: '<!subteam^U019ZMCSUNS> Wow! Tenemos un nuevo cambio para el sitio de phpmexico 🚀'
+          failure_text: '<!subteam^U019ZMCSUNS> Ouch! Algo falló subiendo nuevos cambios 😢'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Required
