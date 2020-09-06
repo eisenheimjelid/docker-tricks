@@ -1,0 +1,24 @@
+name: Try-Tigger
+on:
+  push:
+    paths:
+    - 'tricks/**.json'
+    - '!tricks/000_metadata.json'
+jobs:
+  generate-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Publicar la lista de archivos en el metadata y generar el README
+        uses: ./action-generate-readme
+      - name: Anotar los cambios del README al repositorio
+        run: |
+          git config --global user.name 'Jelid Leon'
+          git config --global user.email 'jelid.leon@gmail.com'
+          # git commit -m "Actualizacion automatica 000_metadata.json" -a
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "Actualizacion automatica 000_metadata.json"
+      - name: Subir cambios
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
