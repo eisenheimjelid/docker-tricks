@@ -22,3 +22,12 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Notify to Slack
+        uses: innocarpe/actions-slack@v1
+        with:
+          status: ${{ job.status }} # Required
+          success_text: '<!subteam^S1ABC2DEF> Wow! Tenemos un nuevo cambio para el sitio de phpmexico 🚀'
+          failure_text: '<!subteam^S1ABC2DEF> Ouch! Algo falló subiendo nuevos cambios 😢'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Required
