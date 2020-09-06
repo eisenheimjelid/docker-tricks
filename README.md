@@ -12,3 +12,9 @@ Exportar desde un contenedor de Docker, con postgresql la base de datos a una sa
 ```console
 ~# docker exec -t container_name pg_dumpall -c -U postgres
 ```
+- ### Importar una base de datos Docker-Postgresql
+Importar desde un archivo con SQL, a un contenedor de Docker, con postgresql.
+
+```console
+~# cat your_dump.sql | docker exec -i container_name psql -U postgres
+```

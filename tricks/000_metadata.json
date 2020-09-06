@@ -2,6 +2,7 @@
  "files": [
   "000_metadata.json",
   "001_docker_exec_shell.json",
-  "002_docker_export_postgresql.json"
+  "002_docker_export_postgresql.json",
+  "003_docker_import_postgresql.json"
  ]
 }
