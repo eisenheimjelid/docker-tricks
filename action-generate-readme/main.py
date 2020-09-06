@@ -36,9 +36,10 @@ def update_readme_file(new_file_list, data_folder_path, readme_file_path):
 
         with open(file_path) as json_file:
             json_data = json.load(json_file)
-            data = json_data['data']
+            data = json_data['data'] if 'data' in json_data else None
 
-        readme_content += generate_content(data)
+        if data:
+            readme_content += generate_content(data)
 
     with open(readme_file_path, 'a+') as f:
         print(readme_content)
