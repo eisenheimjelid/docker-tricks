@@ -1,0 +1,7 @@
+{
+    "data": {
+      "name": "Entrar al contenedor con shell (bash)",
+      "desc": "Desde la consola, se ejecuta el siguiente comando para acceder a la terminal dentro del contenedor. Es muy útil cuando tenemos contenedores tipo Linux.",
+      "code": ["~# docker exec -it container_name /bin/bash"]
+    }
+  }
