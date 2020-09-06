@@ -1,7 +1,0 @@
-{
-    "data": {
-      "name": "Importar una base de datos Docker-Postgresql",
-      "desc": "Importar desde un archivo con SQL, a un contenedor de Docker, con postgresql.",
-      "code": ["~# cat your_dump.sql | docker exec -i container_name psql -U postgres"]
-    }
-  }
