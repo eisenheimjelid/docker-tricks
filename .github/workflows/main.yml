@@ -25,9 +25,9 @@ jobs:
       - name: Notify to Slack
         uses: innocarpe/actions-slack@v1
         with:
-          status: ${{ job.status }} # Required
-          success_text: '😎 Wow! Tenemos un nuevo cambio para el sitio de phpmexico 🚀 https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}'
-          failure_text: '😣 Ouch! Algo falló subiendo nuevos cambios ❌ https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}'
+          status: ${{ job.status }}
+          success_text: '😎 Wow! Tenemos un nuevo cambio para el sitio de phpmexico 🚀 '
+          failure_text: '😣 Ouch! Algo falló subiendo nuevos cambios ❌ '
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Required
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
